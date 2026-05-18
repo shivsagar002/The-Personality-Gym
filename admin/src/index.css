@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gym-orange: #FF5722;
+  --color-gym-neon: #FF3D00;
+  --color-gym-dark: #0A0A0A;
+  --color-gym-darker: #000000;
+  --color-gym-gray: #1E1E1E;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+html, body {
+  @apply bg-gym-dark text-white font-sans;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold uppercase tracking-tight;
+}
+
+/* Torn paper top edge mask */
+.torn-paper-top {
+  clip-path: polygon(
+    0% 0%, 5% 2%, 10% 0%, 15% 3%, 20% 0%, 25% 4%, 30% 1%, 35% 3%, 40% 0%, 45% 2%, 50% 0%, 
+    55% 4%, 60% 0%, 65% 2%, 70% 0%, 75% 3%, 80% 0%, 85% 2%, 90% 0%, 95% 3%, 100% 0%, 
+    100% 100%, 0% 100%
+  );
+}
+
+/* Torn paper bottom edge mask */
+.torn-paper-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 100%, 95% 98%, 90% 100%, 85% 97%, 80% 100%, 75% 98%, 70% 100%, 
+    65% 97%, 60% 100%, 55% 96%, 50% 100%, 45% 98%, 40% 100%, 35% 97%, 30% 100%, 25% 96%, 
+    20% 100%, 15% 98%, 10% 100%, 5% 97%, 0% 100%
+  );
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 87, 34, 0.7), 0 0 20px rgba(255, 87, 34, 0.5);
+}
+
+.box-glow {
+  box-shadow: 0 0 15px rgba(255, 87, 34, 0.4), 0 0 30px rgba(255, 87, 34, 0.2);
+}
+
+.glassmorphism {
+  @apply bg-gym-gray/40 backdrop-blur-md border border-white/10;
+}
